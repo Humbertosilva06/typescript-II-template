@@ -11,7 +11,15 @@ Tendo isso em mente, faça o que se pede:
   b. Faça a tipagem da função.
 */
 
-const posts = [
+//1. criação do type
+
+type TPost = {
+  autor:string,
+  texto:string
+}
+
+//2 tipagem do array
+const posts: Array<TPost> = [
   {
     autor: 'Alvo Dumbledore',
     texto: 'Não vale a pena viver sonhando e se esquecer de viver'
@@ -34,13 +42,17 @@ const posts = [
   }
 ]
 
+//3 a função espera receber no parametro posts um aray (sabemos disse pq dentro da função o posts recebe o metodo filter que é um metodo de array, e o segundo paramtro uma string)
 
-/*
-function buscarPostsPorAutor(posts, autorInformado) {
+function buscarPostsPorAutor(posts:Array<TPost>, autorInformado: string):Array<TPost> {
   return posts.filter(
     (post) => {
       return post.autor === autorInformado
     }
   )
 }
-*/
+
+
+console.log(buscarPostsPorAutor(posts, "Dobby"))
+
+
